@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    .calculator {
+      width: 300px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .display {
+      width: 100%;
+      height: 50px;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      text-align: right;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    button {
+      height: 50px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    button:hover {
+      background-color: #ddd;
+    }
+    button.operation {
+      background-color: #4caf50;
+      color: white;
+    }
+    button.operation:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" id="display" class="display" disabled />
+    <div class="buttons">
+      <button onclick="appendNumber('7')">7</button>
+      <button onclick="appendNumber('8')">8</button>
+      <button onclick="appendNumber('9')">9</button>
+      <button class="operation" onclick="chooseOperation('/')">÷</button>
+      <button onclick="appendNumber('4')">4</button>
+      <button onclick="appendNumber('5')">5</button>
+      <button onclick="appendNumber('6')">6</button>
+      <button class="operation" onclick="chooseOperation('*')">×</button>
+      <button onclick="appendNumber('1')">1</button>
+      <button onclick="appendNumber('2')">2</button>
+      <button onclick="appendNumber('3')">3</button>
+      <button class="operation" onclick="chooseOperation('-')">−</button>
+      <button onclick="appendNumber('0')">0</button>
+      <button onclick="appendDecimal('.')">.</button>
+      <button onclick="clearDisplay()">C</button>
+      <button class="operation" onclick="chooseOperation('+')">+</button>
+      <button class="operation" style="grid-column: span 4;" onclick="calculate()">=</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
